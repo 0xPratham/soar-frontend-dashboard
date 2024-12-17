@@ -67,7 +67,7 @@ const QuickTransfer = () => {
                                     >
                                         <Image
                                             src={profile.avatar}
-                                            alt='logo'
+                                            alt='avatar'
                                             width={400}
                                             height={400}
                                         />

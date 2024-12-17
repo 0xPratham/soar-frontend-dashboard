@@ -1,9 +1,12 @@
 'use client';
 
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+import { Suspense } from 'react';
+import { Avatar, AvatarFallback } from './ui/avatar';
 import { Input } from './ui/input';
 import { SidebarInset, SidebarTrigger } from './ui/sidebar';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+import LoginUserAvatar from '../../public/img/avatar/user-avatar.png';
 
 const Header = ({ children }: { children: React.ReactNode }) => {
     const pathname = usePathname();
@@ -91,8 +94,11 @@ const Header = ({ children }: { children: React.ReactNode }) => {
                             </svg>
                         </button>
                         <Avatar>
-                            <AvatarImage src='/img/user-avatar.png' />
-                            <AvatarFallback>UA</AvatarFallback>
+                            <Suspense
+                                fallback={<AvatarFallback>UA</AvatarFallback>}
+                            >
+                                <Image src={LoginUserAvatar} alt='avatar' />
+                            </Suspense>
                         </Avatar>
                     </div>
                 </div>
