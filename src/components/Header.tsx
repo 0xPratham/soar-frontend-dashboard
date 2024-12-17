@@ -97,7 +97,10 @@ const Header = ({ children }: { children: React.ReactNode }) => {
                             <Suspense
                                 fallback={<AvatarFallback>UA</AvatarFallback>}
                             >
-                                <Image src={LoginUserAvatar} alt='avatar' />
+                                <Image
+                                    src={LoginUserAvatar}
+                                    alt='Profile picture'
+                                />
                             </Suspense>
                         </Avatar>
                     </div>
